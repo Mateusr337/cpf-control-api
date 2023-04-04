@@ -1,5 +1,5 @@
 import cors from "cors";
-import handlerException from "domain/exception/globalHandlerException/handlerException";
+import handlerException from "./domain/exception/globalHandlerException/handlerException";
 import express, { json } from "express";
 import "express-async-errors";
 import "./config/setupConfig";
