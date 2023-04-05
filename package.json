@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "node dist/server.js",
-    "build": "npx tsc --outDir dist",
+    "build": "npx tsc --outDir dist && prisma generate",
     "dev": "nodemon src/server.ts",
-    "test": "dotenv -e .env.test jest -i",
-    "test:coverage": "dotenv -e .env.test jest -i -- --coverage",
+    "test": "dotenv -e .env.test npx prisma migrate dev && dotenv -e .env.test jest -i",
+    "test:coverage": "dotenv -e .env.test npx prisma migrate dev && dotenv -e .env.test jest -i -- --coverage",
     "prisma:test:generate": "dotenv -e .env.test prisma generate",
     "prisma:test:migrate": "dotenv -e .env.test prisma migrate dev",
     "prisma:generate": "prisma generate",
@@ -49,6 +49,7 @@
     "express": "^4.18.2",
     "express-async-errors": "^3.1.1",
     "http-status": "^1.6.2",
-    "joi": "^17.9.1"
+    "joi": "^17.9.1",
+    "typescript": "^5.0.3"
   }
 }
