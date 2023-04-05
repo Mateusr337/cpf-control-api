@@ -1,10 +1,20 @@
 # Restricted CPF system / Sistema restrito de cpf
 
+<br/>
+
 ## :link: About / Descrição
 
 Um sistema que controla os CPFs adicionado-os em uma lista restrita para consultas futuras.
 
 A system that keeps track of CPFs added them to a restricted list for future reference.
+
+#### Deploy
+
+```
+$ https://restricted-cpf-system-api.onrender.com
+```
+
+<br/>
 
 ## :hammer: Features / Funcionalidades
 
@@ -52,6 +62,8 @@ Response status: 204 (NO_CONTENT)
 Error status: 400 (BAD_REQUEST), 404 (NOT_FOUND),
 ```
 
+<br/>
+
 ## :woman_technologist: Technologies
 
 <p align="center">
@@ -66,6 +78,7 @@ Error status: 400 (BAD_REQUEST), 404 (NOT_FOUND),
   <img src="https://img.shields.io/badge/supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=ffffff"/>
   <img src="https://img.shields.io/badge/render-46E3B7?style=for-the-badge&logo=render&logoColor=ffffff"/>
 </p>
+
 <br>
 
 ## :tada: How to run
@@ -74,9 +87,7 @@ Error status: 400 (BAD_REQUEST), 404 (NOT_FOUND),
 
 - Node
 - npm
-- PostgreSQL (optional / opcional)
-  - Use local database / Use banco de dados local
-  - Use Supabase URL / Use a URL do Supabase
+- PostgreSQL (local database / banco de dados local)
 
 ```
 # Clone this repo
@@ -106,3 +117,5 @@ $ npm run dev
 $ npm run test
 $ npm run test:coverage
 ```
+
+<br/>

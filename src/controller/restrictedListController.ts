@@ -5,7 +5,8 @@ import removeCpfId from '../util/removeCpfId';
 
 async function create(req: Request, res: Response) {
   const createdCpf = await restrictedListService.create(req.body.cpf);
-  res.status(httpStatus.CREATED).send(createdCpf);
+  const formattedCpf = removeCpfId([createdCpf])[0];
+  res.status(httpStatus.CREATED).send(formattedCpf);
 }
 
 async function findByCpf(req: Request, res: Response) {
