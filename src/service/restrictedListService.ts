@@ -1,15 +1,15 @@
 import ExistsCpfException from '../domain/exception/existsCpfException';
 import notFoundCpfException from '../domain/exception/notFoundCpfException';
-import cpfRepository from '../repository/restrictedListRepository';
+import restrictedListRepository from '../repository/restrictedListRepository';
 
 async function create(cpf: string) {
-  const foundCpf = await cpfRepository.findByCpf(cpf);
+  const foundCpf = await restrictedListRepository.findByCpf(cpf);
   if (foundCpf) throw ExistsCpfException;
-  return await cpfRepository.create(cpf);
+  return await restrictedListRepository.create(cpf);
 }
 
 async function findByCpf(cpf: string) {
-  const foundCpf = await cpfRepository.findByCpf(cpf);
+  const foundCpf = await restrictedListRepository.findByCpf(cpf);
   if (!foundCpf) throw notFoundCpfException;
   return foundCpf;
 }

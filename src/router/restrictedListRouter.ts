@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import cpfController from '../controller/restrictedListController';
+import restrictedListController from '../controller/restrictedListController';
 import createCpfRequestSchema from '../domain/schemas/createCpfRequestSchema';
 import validateCpfMiddleware from '../middleware/validateCpfMiddleware';
 import { validateSchemaMiddleware } from '../middleware/validateSchemaMiddleware';
@@ -10,7 +10,9 @@ restrictedListRouter.post(
   '/cpf',
   validateSchemaMiddleware(createCpfRequestSchema),
   validateCpfMiddleware,
-  cpfController.create,
+  restrictedListController.create,
 );
+
+restrictedListRouter.get('/cpf/:cpf', validateCpfMiddleware, restrictedListController.findByCpf);
 
 export default restrictedListRouter;

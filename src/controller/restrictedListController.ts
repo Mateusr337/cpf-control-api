@@ -8,8 +8,9 @@ async function create(req: Request, res: Response) {
 }
 
 async function findByCpf(req: Request, res: Response) {
-  const cpf = await restrictedListService.findByCpf(req.params.cpf);
-  res.status(httpStatus.OK).send(cpf);
+  const foundCpf: any = await restrictedListService.findByCpf(req.params.cpf);
+  delete foundCpf.id;
+  res.status(httpStatus.OK).send(foundCpf);
 }
 
 export default {
