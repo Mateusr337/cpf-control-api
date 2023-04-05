@@ -89,11 +89,11 @@ $ git clone https://github.com/Mateusr337/BattlePoke_API.git
 
 $ npm i
 
-# Migrate database model (prisma)
-# Migrar modelo de banco de dados (prisma)
+# Push database model (prisma)
+# Enviar modelo do banco de dados (prisma)
 
-$ npm run prisma:migrate
-$ npm run prisma:test:migrate
+$ npm run prisma:push
+$ npm run prisma:push:test
 
 # Run like development
 # Execute como desenvolvimento
