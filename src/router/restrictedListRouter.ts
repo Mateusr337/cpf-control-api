@@ -12,7 +12,8 @@ restrictedListRouter.post(
   validateCpfMiddleware,
   restrictedListController.create,
 );
-
+restrictedListRouter.delete('/cpf/:cpf', validateCpfMiddleware, restrictedListController.deleteByCpf);
 restrictedListRouter.get('/cpf/:cpf', validateCpfMiddleware, restrictedListController.findByCpf);
+restrictedListRouter.get('/cpf', restrictedListController.findAll);
 
 export default restrictedListRouter;

@@ -14,7 +14,18 @@ async function findByCpf(cpf: string) {
   return foundCpf;
 }
 
+async function findAll() {
+  return await restrictedListRepository.findAll();
+}
+
+async function deleteByCpf(cpf: string) {
+  await findByCpf(cpf);
+  await restrictedListRepository.deleteByCpf(cpf);
+}
+
 export default {
   create,
   findByCpf,
+  findAll,
+  deleteByCpf,
 };

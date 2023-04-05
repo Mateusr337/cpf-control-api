@@ -36,4 +36,23 @@ describe('Restricted List integration tests', () => {
     expect(response.body.cpf).toEqual(createdCpf.cpf);
     expect(response.body.createAt).not.toBeNull();
   });
+
+  it('GET /cpf - Should answer with cpf list and status code OK', async () => {
+    await cpfFactory.create('87511509053');
+    await cpfFactory.create('02076074007');
+    const response = await server.get('/cpf');
+
+    expect(response.status).toEqual(httpStatus.OK);
+    expect(response.body).toHaveLength(2);
+  });
+
+  it('DELETE /cpf/:cpf - Should answer with empty body and status code NO_CONTENT', async () => {
+    const createdCpf = await cpfFactory.create('87511509053');
+    const response = await server.delete(`/cpf/${createdCpf.cpf}`);
+    const cpfListOfDatabase = await db.restrictedCpf.findMany();
+
+    expect(response.status).toEqual(httpStatus.NO_CONTENT);
+    expect(response.body).toEqual({});
+    expect(cpfListOfDatabase).toHaveLength(0);
+  });
 });
