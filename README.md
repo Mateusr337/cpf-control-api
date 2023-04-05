@@ -75,6 +75,8 @@ Error status: 400 (BAD_REQUEST), 404 (NOT_FOUND),
 - Node
 - npm
 - PostgreSQL (optional / opcional)
+  - Use local database / Use banco de dados local
+  - Use Supabase URL / Use a URL do Supabase
 
 ```
 # Clone this repo
