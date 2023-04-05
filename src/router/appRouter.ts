@@ -1,8 +1,8 @@
-import { Router } from "express";
-import cpfRouter from "./cpfRouter";
+import { Router } from 'express';
+import restrictedListRouter from './restrictedListRouter';
 
 const appRouter = Router();
 
-appRouter.use(cpfRouter);
+appRouter.use(restrictedListRouter);
 
 export default appRouter;

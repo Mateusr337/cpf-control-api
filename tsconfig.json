@@ -9,7 +9,6 @@
     "strict": true,
     "moduleResolution": "node",
     "skipLibCheck": true,
-    "baseUrl": "src",
     "plugins": [
       {
         "transform": "typescript-transform-paths"

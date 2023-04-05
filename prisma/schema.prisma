@@ -10,10 +10,10 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model RestrictCpf {
+model RestrictedCpf {
   id       Int      @id @default(autoincrement())
   cpf      String   @unique @db.Char(11)
   createAt DateTime @default(now())
 
-  @@map("restrictsCpfs")
+  @@map("restrictedCpfs")
 }
